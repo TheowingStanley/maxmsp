@@ -1576,6 +1576,257 @@
           ],
           "text": "Convolution Reverb (2 IR presets)"
         }
+      },
+      {
+        "box": {
+          "id": "obj-hitdisp",
+          "maxclass": "comment",
+          "numinlets": 1,
+          "numoutlets": 0,
+          "patching_rect": [
+            20.0,
+            300.0,
+            160.0,
+            24.0
+          ],
+          "text": "HIT: -",
+          "fontsize": 16.0,
+          "presentation": 1,
+          "presentation_rect": [
+            460.0,
+            10.0,
+            180.0,
+            24.0
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "obj-hitkick",
+          "maxclass": "message",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            20.0,
+            330.0,
+            70.0,
+            22.0
+          ],
+          "text": "set HIT: KICK"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-hitsnare",
+          "maxclass": "message",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            95.0,
+            330.0,
+            80.0,
+            22.0
+          ],
+          "text": "set HIT: SNRE"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-hithat",
+          "maxclass": "message",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            180.0,
+            330.0,
+            80.0,
+            22.0
+          ],
+          "text": "set HIT: HHAT"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-hitsample",
+          "maxclass": "message",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            265.0,
+            330.0,
+            90.0,
+            22.0
+          ],
+          "text": "set HIT: SMPL"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-hitcleartrig",
+          "maxclass": "newobj",
+          "numinlets": 1,
+          "numoutlets": 1,
+          "outlettype": [
+            "bang"
+          ],
+          "patching_rect": [
+            360.0,
+            330.0,
+            45.0,
+            22.0
+          ],
+          "text": "delay 120"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-hitclear",
+          "maxclass": "message",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            410.0,
+            330.0,
+            60.0,
+            22.0
+          ],
+          "text": "set HIT: -"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-modelabel",
+          "maxclass": "comment",
+          "numinlets": 1,
+          "numoutlets": 0,
+          "patching_rect": [
+            500.0,
+            300.0,
+            180.0,
+            24.0
+          ],
+          "text": "MODE: DRUM",
+          "fontsize": 16.0,
+          "presentation": 1,
+          "presentation_rect": [
+            460.0,
+            35.0,
+            180.0,
+            24.0
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "obj-modectrl",
+          "maxclass": "newobj",
+          "numinlets": 1,
+          "numoutlets": 3,
+          "outlettype": [
+            "bang",
+            "bang",
+            "bang"
+          ],
+          "patching_rect": [
+            500.0,
+            330.0,
+            80.0,
+            22.0
+          ],
+          "text": "select 1 2 3"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-modenum",
+          "maxclass": "number",
+          "numinlets": 1,
+          "numoutlets": 2,
+          "patching_rect": [
+            585.0,
+            330.0,
+            50.0,
+            22.0
+          ],
+          "minimum": 1,
+          "maximum": 3,
+          "presentation": 1,
+          "presentation_rect": [
+            650.0,
+            35.0,
+            40.0,
+            22.0
+          ]
+        }
+      },
+      {
+        "box": {
+          "id": "obj-modedrum",
+          "maxclass": "message",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            500.0,
+            360.0,
+            90.0,
+            22.0
+          ],
+          "text": "set MODE: DRUM"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-modesample",
+          "maxclass": "message",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            595.0,
+            360.0,
+            100.0,
+            22.0
+          ],
+          "text": "set MODE: SAMPLE"
+        }
+      },
+      {
+        "box": {
+          "id": "obj-modeedit",
+          "maxclass": "message",
+          "numinlets": 2,
+          "numoutlets": 1,
+          "outlettype": [
+            ""
+          ],
+          "patching_rect": [
+            700.0,
+            360.0,
+            90.0,
+            22.0
+          ],
+          "text": "set MODE: EDIT"
+        }
       }
     ],
     "lines": [
@@ -2271,6 +2522,258 @@
           ],
           "destination": [
             "obj-conv",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-14",
+            0
+          ],
+          "destination": [
+            "obj-hitkick",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-15",
+            0
+          ],
+          "destination": [
+            "obj-hitsnare",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-16",
+            0
+          ],
+          "destination": [
+            "obj-hithat",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-17",
+            0
+          ],
+          "destination": [
+            "obj-hitsample",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hitkick",
+            0
+          ],
+          "destination": [
+            "obj-hitdisp",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hitkick",
+            0
+          ],
+          "destination": [
+            "obj-hitcleartrig",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hitsnare",
+            0
+          ],
+          "destination": [
+            "obj-hitdisp",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hitsnare",
+            0
+          ],
+          "destination": [
+            "obj-hitcleartrig",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hithat",
+            0
+          ],
+          "destination": [
+            "obj-hitdisp",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hithat",
+            0
+          ],
+          "destination": [
+            "obj-hitcleartrig",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hitsample",
+            0
+          ],
+          "destination": [
+            "obj-hitdisp",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hitsample",
+            0
+          ],
+          "destination": [
+            "obj-hitcleartrig",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hitcleartrig",
+            0
+          ],
+          "destination": [
+            "obj-hitclear",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-hitclear",
+            0
+          ],
+          "destination": [
+            "obj-hitdisp",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-modenum",
+            0
+          ],
+          "destination": [
+            "obj-modectrl",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-modectrl",
+            0
+          ],
+          "destination": [
+            "obj-modedrum",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-modectrl",
+            1
+          ],
+          "destination": [
+            "obj-modesample",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-modectrl",
+            2
+          ],
+          "destination": [
+            "obj-modeedit",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-modedrum",
+            0
+          ],
+          "destination": [
+            "obj-modelabel",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-modesample",
+            0
+          ],
+          "destination": [
+            "obj-modelabel",
+            0
+          ]
+        }
+      },
+      {
+        "patchline": {
+          "source": [
+            "obj-modeedit",
+            0
+          ],
+          "destination": [
+            "obj-modelabel",
             0
           ]
         }
